@@ -47,7 +47,7 @@ endfunction
 
 
 function s:MatchAllLinks(lines)
-  let l:pattern_url='http[s]\?:\/\/[[:alnum:]\%\/_\#.-]*'
+  let l:pattern_url='http[s]\?:\/\/[[:alnum:]\%\/_\#.\-%=+]*'
   let l:matched_urls=s:MatchAll(a:lines,l:pattern_url)
   let l:uniq_urls=uniq(filter(l:matched_urls, 'len(v:val)>0'))
   return l:uniq_urls
